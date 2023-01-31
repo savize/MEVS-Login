@@ -1,0 +1,363 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+}
+
+body {
+  background-image: url(data/bg.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Calibri, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.header .logo {
+  flex: 20%;
+  padding: 40px;
+  height: 230px;
+  justify-content: center;
+  align-items: center;
+}
+
+.top {
+  flex: 80%;
+  padding: 40px;
+  padding-left: 120px;
+  padding-top: 80px;
+  color: white;
+}
+
+.form {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  text-align: center;
+  color: rgb(194, 194, 194);
+  background-color: rgba(0, 0, 0, 0.556);
+  padding: 30px;
+  margin: auto;
+  width: 690px;
+  height: 350px;
+  border-radius: 25px;
+  box-shadow:
+    0px 2px 10px rgba(0, 0, 0, 0.2),
+    0px 10px 20px rgba(0, 0, 0, 0.3),
+    0px 30px 60px 1px rgba(0, 0, 0, 0.5);
+}
+
+.form .head {
+  color: rgb(255, 255, 255);
+  flex: 20%;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+.form .main {
+  flex: 80%;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 20px;
+}
+
+.form .main input[type=text],
+[type=password] {
+  background: rgba(255, 255, 255, 0.578);
+  width: 220px;
+  height: 40px;
+  flex-direction: row;
+  color: rgb(0, 0, 0);
+  font-size: 1em;
+  outline: none;
+  border: 1px;
+  border-radius: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.form .main button {
+  cursor: pointer;
+}
+
+.form .main button.Login {
+  background: rgb(43, 116, 131);
+  width: 460px;
+  height: 45px;
+  color: white;
+  font-size: 1em;
+  outline: none;
+  border: 1px;
+  border-radius: 25px;
+}
+
+.form .main button.Login:hover {
+  background: rgb(0, 199, 192);
+  color: rgb(0, 0, 0);
+  transition: 1s;
+}
+
+.form .main button.Register {
+  background: rgb(255, 255, 255);
+  width: 460px;
+  height: 45px;
+  color: rgb(0, 0, 0);
+  font-size: 1em;
+  outline: none;
+  border: 1px;
+  border-radius: 25px;
+}
+
+.form .main button.Register:hover {
+  background: rgb(255, 179, 0);
+  color: rgb(255, 255, 255);
+  transition: 1s;
+}
+
+.form .main .Forgot {
+  color: white;
+  /* text-decoration: none; */
+  float: right;
+}
+
+.form .main input {
+  margin: 5px;
+}
+
+.form .main button {
+  margin: 5px;
+}
+
+.form .main a {
+  margin: 5px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+  -webkit-animation-name: fadeIn;
+  /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s
+}
+
+.modal-content {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  background-color: #000;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s
+}
+
+.close {
+  color: white;
+  float: right;
+  padding-right: 25px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(174, 0, 0);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px;
+  color: white;
+  background-color: rgb(0, 0, 0);
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.modal-body button {
+  background: rgb(255, 255, 255);
+  width: 290px;
+  height: 45px;
+  margin: 20px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  font-size: 1em;
+  outline: none;
+  border: 1px;
+  border-radius: 15px;
+}
+
+@-webkit-keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0
+  }
+
+  to {
+    bottom: 0;
+    opacity: 1
+  }
+}
+
+@keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0
+  }
+
+  to {
+    bottom: 0;
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+.contain {
+  display: flex;
+  flex-direction: row;
+  height: 800px;
+}
+
+.left {
+  padding-left: 0;
+  flex: 20%;
+  margin-right: 20px;
+  margin-left: 0;
+  background-color: rgba(255, 255, 255, 0.295);
+  border-top-right-radius: 45px;
+  border-bottom-right-radius: 45px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  color: rgb(211, 211, 211);
+}
+
+.menu li {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.menu a {
+  color: rgb(211, 211, 211);
+  text-decoration: none;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.521);
+  justify-content: center;
+  margin: 12px;
+  margin-left: -40px;
+  margin-right: auto;
+  padding: 12px;
+}
+
+.menu a:hover {
+  background-color: rgb(80, 190, 160);
+  color: black;
+}
+
+.main {
+  flex: 60%;
+}
+
+.bar {
+  background-color: rgb(80, 190, 160);
+  height: 70px;
+  margin-top: 0;
+  padding: 20px;
+  padding-left: 45px;
+  font-weight: bolder;
+  color: rgb(255, 255, 255);
+  border-bottom-left-radius: 45px;
+  border-bottom-right-radius: 45px;
+  position: relative;
+  z-index: 1;
+}
+
+.panel {
+  background-color: rgb(211, 211, 211);
+  height: 750px;
+  padding: 20px;
+  margin-top: -40px;
+  border-radius: 45px;
+}
+
+.right {
+  flex: 20%;
+  padding: 20px;
+  margin-left: 20px;
+  background-color: rgba(255, 255, 255, 0.295);
+  border-top-left-radius: 45px;
+  border-bottom-left-radius: 45px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: rgb(211, 211, 211);
+}
+
+.right img {
+  border-radius: 50%;
+}
+
+.right table {
+  color: white;
+  font-weight: bolder;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+
+.diagrams{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#piechart{
+  flex: 50%;
+  background-color: rgba(255, 255, 0, 0);
+}
+
